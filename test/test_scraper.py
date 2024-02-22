@@ -1,5 +1,5 @@
 import unittest
-from leetifypy.scraper import WebScraper
+from scraper import WebScraper
 
 class TestWebScraper(unittest.TestCase):
     def setUp(self):
@@ -9,12 +9,13 @@ class TestWebScraper(unittest.TestCase):
         self.scraper.close_browser()
 
 
-    def test_get_player_teammates(self):
+    def test_get_player_aimstat(self):
         account_link = "https://leetify.com/app/profile/76561199506785320"
-        teammates = self.scraper.get_player_teammates(account_link)
-        self.assertIsNotNone(teammates)
-        print(teammates)
-        # Add more specific assertions based on the expected behavior
+        aimstat = self.scraper.get_aim_stat(account_link)
+        self.assertIsNotNone(aimstat)
+
+
+    
 
 if __name__ == "__main__":
     unittest.main()
